@@ -15,6 +15,7 @@
 		4B0FC9E9227D265B00E28D38 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B0FC9E7227D265B00E28D38 /* LaunchScreen.storyboard */; };
 		4B0FC9F4227D265B00E28D38 /* SMS_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0FC9F3227D265B00E28D38 /* SMS_AppTests.swift */; };
 		4B0FC9FF227D265B00E28D38 /* SMS_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0FC9FE227D265B00E28D38 /* SMS_AppUITests.swift */; };
+		4B0FCA0E227D2F4500E28D38 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B0FCA0D227D2F4500E28D38 /* NetworkExtension.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,8 @@
 		4B0FC9FA227D265B00E28D38 /* SMS_AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SMS_AppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B0FC9FE227D265B00E28D38 /* SMS_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMS_AppUITests.swift; sourceTree = "<group>"; };
 		4B0FCA00227D265B00E28D38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4B0FCA0D227D2F4500E28D38 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
+		4B91DFEB227D33D70071D392 /* SMS_App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SMS_App.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B0FCA0E227D2F4500E28D38 /* NetworkExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +87,7 @@
 				4B0FC9F2227D265B00E28D38 /* SMS_AppTests */,
 				4B0FC9FD227D265B00E28D38 /* SMS_AppUITests */,
 				4B0FC9DA227D265A00E28D38 /* Products */,
+				4B0FCA0C227D2F4500E28D38 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +104,7 @@
 		4B0FC9DB227D265A00E28D38 /* SMS_App */ = {
 			isa = PBXGroup;
 			children = (
+				4B91DFEB227D33D70071D392 /* SMS_App.entitlements */,
 				4B0FC9DC227D265A00E28D38 /* AppDelegate.swift */,
 				4B0FC9DE227D265A00E28D38 /* FirstViewController.swift */,
 				4B0FC9E0227D265A00E28D38 /* SecondViewController.swift */,
@@ -126,6 +132,14 @@
 				4B0FCA00227D265B00E28D38 /* Info.plist */,
 			);
 			path = SMS_AppUITests;
+			sourceTree = "<group>";
+		};
+		4B0FCA0C227D2F4500E28D38 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4B0FCA0D227D2F4500E28D38 /* NetworkExtension.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,6 +211,14 @@
 					4B0FC9D8227D265A00E28D38 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.DataProtection = {
+								enabled = 1;
+							};
+							com.apple.NetworkExtensions.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					4B0FC9EE227D265B00E28D38 = {
 						CreatedOnToolsVersion = 9.2;
@@ -430,7 +452,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SMS_App/SMS_App.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3C4383262W;
 				INFOPLIST_FILE = SMS_App/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.SMS-App";
@@ -444,7 +468,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SMS_App/SMS_App.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3C4383262W;
 				INFOPLIST_FILE = SMS_App/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.SMS-App";
